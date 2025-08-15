@@ -26,10 +26,34 @@ export default function RootLayout() {
   };
 
   const customFonts: Partial<MD3Typescale> = {
-    displayLarge: { fontFamily: 'PoppinsBold', fontWeight: 'normal', fontSize: 57, lineHeight: 64, letterSpacing: 0 },
-    headlineMedium:{ fontFamily: 'PoppinsRegular', fontWeight: 'normal', fontSize: 28, lineHeight: 36, letterSpacing: 0 },
-    bodyMedium:    { fontFamily: 'PoppinsRegular', fontWeight: 'normal', fontSize: 16, lineHeight: 24, letterSpacing: 0.15 },
-    labelLarge:    { fontFamily: 'PoppinsBold', fontWeight: 'normal', fontSize: 14, lineHeight: 20, letterSpacing: 0.1 },
+    displayLarge: {
+      fontFamily: 'PoppinsBold',
+      fontWeight: 'normal',
+      fontSize: 57,
+      lineHeight: 64,
+      letterSpacing: 0,
+    },
+    headlineMedium: {
+      fontFamily: 'PoppinsRegular',
+      fontWeight: 'normal',
+      fontSize: 28,
+      lineHeight: 36,
+      letterSpacing: 0,
+    },
+    bodyMedium: {
+      fontFamily: 'PoppinsRegular',
+      fontWeight: 'normal',
+      fontSize: 16,
+      lineHeight: 24,
+      letterSpacing: 0.15,
+    },
+    labelLarge: {
+      fontFamily: 'PoppinsBold',
+      fontWeight: 'normal',
+      fontSize: 14,
+      lineHeight: 20,
+      letterSpacing: 0.1,
+    },
   };
 
   const paperTheme = {
@@ -39,19 +63,21 @@ export default function RootLayout() {
   };
 
   return (
-      <PaperProvider theme={paperTheme}>
-        <ThemeProvider value={navigationDefaultTheme}>
-          <View style={styles.container}>
-            <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#f0eff3' } }}>
-              {/* Grupos de rutas */}
-              <Stack.Screen name="(public)" />
-              <Stack.Screen name="(private)" />
-              <Stack.Screen name="+not-found" />
-            </Stack>
-          </View>
-          <StatusBar style="auto" />
-        </ThemeProvider>
-      </PaperProvider>
+    <PaperProvider theme={paperTheme}>
+      <ThemeProvider value={navigationDefaultTheme}>
+        <View style={styles.container}>
+          <Stack
+            screenOptions={{ headerShown: false, contentStyle: { backgroundColor: '#f0eff3' } }}
+          >
+            {/* Grupos de rutas */}
+            <Stack.Screen name="(public)" />
+            <Stack.Screen name="(private)" />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </View>
+        <StatusBar style="auto" />
+      </ThemeProvider>
+    </PaperProvider>
   );
 }
 
