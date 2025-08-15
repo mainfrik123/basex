@@ -1,0 +1,18 @@
+# Node & build
+node_modules
+dist
+build
+
+# Android & iOS (Expo prebuild or eject)
+android
+ios
+
+# Output folders
+.expo
+.expo-shared
+web-build
+
+# IDE & system files
+.idea
+.vscode
+.DS_Store
